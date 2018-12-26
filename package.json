@@ -1,0 +1,27 @@
+{
+  "name": "elbrus-aem-stencil-components",
+  "author": "malay76a",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malay76a/elbrus-aem-stencil-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/malay76a/elbrus-aem-stencil-components/issues"
+  },
+  "homepage": "https://github.com/malay76a/elbrus-aem-stencil-components#readme",
+  "devDependencies": {
+    "lerna": "^3.8.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
+    "test": "jest --coverage --verbose",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna exec --parallel -- babel src -d dist --ignore spec.js,story.js",
+    "build-storybook": "build-storybook",
+    "publish": "lerna publish --skip-git --skip-npm",
+    "prepublish": "npm run build",
+    "precommit": "npm test",
+    "postinstall": "npm run bootstrap"
+  }
+}
